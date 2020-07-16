@@ -1,0 +1,79 @@
+Explain with example the remaining methods of string and array.
+STRING:
+charCodeAt():
+It provides the Unicode value of a character present at the specified index.
+concat():	
+It provides a combination of two or more strings.
+search():	
+It searches a specified regular expression in a given string and returns its position if a match occurs.
+match():	
+It searches a specified regular expression in a given string and returns that regular expression if a match occurs.
+replace():	
+It replaces a given string with the specified replacement.
+slice():
+It is used to fetch the part of the given string. It allows us to assign positive as well negative index.
+toString():	
+It provides a string representing the particular object.
+valueOf():	
+It provides the primitive value of string object.
+trim():
+It trims the white space from the left and right side of the string.
+
+ARRAY:
+toString():
+It converts an array to a string of (comma separated) array values.
+The join():
+This method also joins all array elements into a string.
+The shift():
+This method removes the first array element and "shifts" all other elements to a lower index.
+The unshift():
+This method adds a new element to an array (at the beginning), and "unshifts" older elements.
+The splice():
+This method can be used to add new items to an array.
+The slice(): 
+This method slices out a piece of an array into a new array.
+Automatic toString():
+JavaScript automatically converts an array to a comma separated string when a primitive value is expected.
+
+
+<html>
+<head>
+	<title>Arrays Methods</title>
+	<script type="text/javascript">
+		var students = new Array("Jeba", "Gayu", "Lega", "Gnana", "Raji");
+		Array.prototype.displayItems=function(){
+			for (i=0;i<this.length;i++){
+				document.write(this[i] + "<br />");
+			}
+		}	
+		document.write("students array<br />");
+		students.displayItems();
+		document.write("<br />The number of items in students array is " + students.length + "<br />");
+		document.write("<br />The SORTED students array<br />");
+		students.sort();
+		students.displayItems();
+		document.write("<br />The REVERSED students array<br />");
+		students.reverse();
+		students.displayItems();
+		document.write("<br />THE students array after REMOVING the LAST item<br />");
+		students.pop();
+		students.displayItems();
+        document.write("<br />THE students array after PUSH<br />");
+        students.push("New Stuff");
+		students.displayItems();
+	</script>
+</head>
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
