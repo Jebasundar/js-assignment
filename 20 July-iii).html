@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        function get(url) {
+            return new Promise(function(resolve, reject) {
+                var req = new XMLHttpRequest();
+                req.open('GET', url);
+                req.onload = function() {
+                    if (req.status == 200) {
+                        resolve(req.response);
+                    } else {
+                        reject(Error(req.statusText));
+                    }
+                };
+                req.onerror = function() {
+                    reject(Error("Network Error"));
+                };
+                req.send();
+            });
+        }
+        get('https://jsonplaceholder.typicode.com/todos').then(function(response) {
+            var responseList = JSON.parse(response);
+            var completedResponse = responseList.filter(element => {
+                return element.completed;
+            });
+            console.log("Completed Tasks!", completedResponse);
+        });
+    </script>
+</html>

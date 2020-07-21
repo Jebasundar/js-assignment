@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        class User {
+            constructor(name,age,email) {
+                this.name = name;
+                this.age = age;
+                this.email = email;
+            }
+            login() {
+                return 'User logged in';
+            }
+            logout() {
+                return 'User logged out';
+            }
+        }
+        user1 = new User('jeba', 20, 'jeba@gmail.com');
+        console.log(user1);
+        console.log(user1.login());
+        class Moderator extends User {
+            constructor(name,age,email, coin) {
+                super(name, age, email);
+                this.coin = coin;
+            }
+            addCoin() {
+                return this.coin + 1;
+            }
+            removeCoin() {
+                return this.coin - 1;
+            }
+        }
+        moderator1 = new Moderator('moderator1', 10, 'moderator1@gmail.com', 3);
+        console.log(moderator1.removeCoin());
+        console.log(moderator1.addCoin());
+        class Admin extends Moderator {
+            constructor(name,age,email,coin,course){
+                super(name,age,email,coin);
+                this.course = new Array(course);
+            }
+            addCourse(courseName) {
+                return this.course.push(courseName);
+            }
+            removeCourse(courseName) {
+                return this.course = this.course.filter(function myfunction(value) {
+                    return value != courseName;
+                });
+            }
+        }
+        admin1 = new Admin('admin1', 20, 'admin1@gmail.com', 3, 'tamil');
+        console.log(admin1.addCourse('English'));
+        console.log(admin1.addCourse('Maths'));
+        console.log(admin1.removeCourse('tamil'));
+    </script>
+</html>
