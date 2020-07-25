@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var txt;
+  var person = prompt("Please enter your name:",);
+  if (person == null || person == "") {
+    txt = "User cancelled the prompt.";
+  } else {
+    txt = "Hello " + person + "! How are you today?";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"content="width=device-width,initial-scale=1.0">
+        <title>Question 3</title>
+    </head>
+    <body>
+        <div class = "toptav">
+            <a class = "active"href = "#home">home</a>
+            <a class = "#news">news</a>
+            <a class = "#contact">contact</a>
+            <i class = "fa fa-clock-0" style = "font-size:48px;color:red"></i>
+        </div>
+        <style>
+            body{
+                podding:25 px;
+                background-color: white;
+                color:black;
+                font-size: 25 px;
+            }
+            dark-mode{
+                background-color: black;
+                color:white;
+            }
+        </style>
+        <button onclick = "myfunction()">toggle dark dark_mode</button>
+        <script>
+            function myfunction(){
+                var element = document.body;
+                element.classList.toggle("dark-mode");
+            }
+        </script>
+            
+    </body>
+</html>
+    
